@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salário</title>
+</head>
+<style>
+    body{
+        background-color: white;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        margin: 0;
+        padding: 0;
+    }
+    main{
+        margin-top: 10px ;
+        align-items: center;
+    }
+    label{
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    button{
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    button:hover{
+        background-color: rgb(52, 151, 218);
+    }
+    h1{
+        text-align: center;
+        color: blue;
+        margin-bottom: 40px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <main>
+        <h1>Atividade 9 C++</h1>
+
+        <p>Este código permite que, a partir do seu salário atual e percentual de aumento, você calcule o seu novo salário</p>
+
+        <label>Qual o valor do seu salario :</label>
+        <input type="number" id="salario_atual"><br><br>
+
+        <label>Qual foi o percentual de aumento :</label>
+        <input type="number" id="percentual"><br><br>
+
+        <button onclick="calcular()">Calcular</button>
+
+        <h3 id="resultado"></h3>
+
+        <script>
+            function calcular(){
+        
+            let salario_atual = parseFloat(document.getElementById("salario_atual").value) || 0;
+            let percentual = parseFloat(document.getElementById("percentual").value) || 0;
+
+            let calculo = (percentual/100);
+            let total = calculo * salario_atual;
+            let salario_novo = (salario_atual + total);
+            
+            document.getElementById("resultado").textContent = 
+                "O valor do novo salário = " + salario_novo;
+            }
+
+        </script>
+    </main>
+</body>
+</html>

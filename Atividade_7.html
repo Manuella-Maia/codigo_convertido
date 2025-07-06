@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dias Vividos</title>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(45deg, blue ,cyan );
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       height: 100vh;
+    }
+    main{
+        margin-top: 10px;
+        align-items: center;
+ 
+    }
+    h1{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+    
+    label{
+        text-align: left;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    button{
+        background-color:   blue ;
+        color: white;
+        padding: 10px 20px;
+        border:none;
+        transition:background-color 0.3s ;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    button:hover{
+         background-color: rgb(37, 175, 230);
+    }
+    .card{
+        background-color: white;
+         box-shadow: 0 0 10px rgba(0,0,0,0.1);
+         padding: 100px;
+         width: 900px;
+        border-radius: 10px;
+        margin: 10px auto ;
+    }
+</style>
+<body>
+    <main>
+    
+    <div class="card">
+    <h1 style="color: blue;">Atividade 7 C++</h1>
+
+    <P>Este código permite que você calcule, a partir da sua idade, meses e dias completos o seu total de dias vividos.</P>
+        
+
+    <label>Digite sua idade em anos :</label>
+    <input type="number" id="anos"><br><br>
+
+    <label>Digite quantos meses completos voce tem :</label>
+    <input type="number" id="meses"><br><br>
+
+    <label>Digite quantos dias completos voce tem : </label>
+    <input type="number" id="dias"><br><br>
+
+    <button onclick="calcularDias()">Calcular</button>
+
+    <h3 id="resultado"></h3>
+    </div>
+
+    <script>
+    function calcularDias() {
+      let anos = parseInt(document.getElementById("anos").value) || 0;
+      let meses = parseInt(document.getElementById("meses").value) || 0;
+      let dias = parseInt(document.getElementById("dias").value) || 0;
+
+      let total = (anos * 365) + (meses * 30) + dias;
+
+      document.getElementById("resultado").textContent = 
+        "O total de dias vividos é: " + total;
+    }
+   </script>
+
+
+    </main>
+</body>
+</html>
